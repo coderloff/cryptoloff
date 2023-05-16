@@ -1,0 +1,45 @@
+main .price-content {
+  grid-template-columns: 3fr 1fr;
+  overflow-y: hidden;
+}
+main .price-content .card {
+  position: relative;
+  overflow-y: hidden;
+}
+main .price-content .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-right: 10px;
+}
+main .price-content .card-content .change-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .price-content .card-content .change-container h6 {
+  color: var(--gray-5);
+}
+main .price-content .card .interval{
+  height: 25px;
+  position: absolute;
+  right: 18px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  overflow: hidden;
+}
+main .price-content .card .interval h6{
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black-2);
+  color: var(--gray-5);
+  cursor: pointer;
+}
+main .price-content .card .interval h6.active{
+  background: var(--primary);
+  color: var(--black-1);
+}

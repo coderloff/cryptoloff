@@ -1,0 +1,80 @@
+main .market-content {
+  overflow-y: hidden;
+}
+main .search-bar {
+  width: 180px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 5px;
+  color: var(--gray-4);
+}
+main .search-bar input {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 1px solid var(--black-2);
+  border-radius: 20px;
+  outline: none;
+  color: var(--gray-4);
+  padding: 0 40px 0 14px;
+  font-size: 14px;
+}
+main .search-bar input::-webkit-input-placeholder {
+  color: var(--gray-4);
+}
+main .search-bar i {
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
+main .market-content .card{
+  overflow-y: hidden;
+}
+main .market-content .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .market-content .bar {
+  margin: 10px 0;
+}
+main .market-content .table-header {
+  width: 100%;
+  padding: 0px 15px;
+  display: grid;
+  grid-template-columns: 145fr 95fr 122fr 132fr 127fr 132fr 100fr 63fr;
+  color: var(--gray-5);
+}
+main .market-content .table-header h6{
+  font-weight: 400;
+}
+main .market-content .card-content {
+  width: 100%;
+  flex-direction: column;
+}
+main .market-content .card-content .coin{
+  width: 100%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 145fr 95fr 122fr 132fr 127fr 132fr 100fr 63fr;
+  align-items: center;
+  padding: 0 9px 0 15px;
+}
+main .market-content .card-content .coin .market{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+main .market-content .card-content .coin .market img{
+  height: 30px;
+}
+main .market-content .card-content .coin .market img{
+  height: 30px;
+}
+main .market-content .card-content .coin .value{
+  color: var(--white);
+}

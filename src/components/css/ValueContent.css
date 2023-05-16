@@ -1,0 +1,21 @@
+main .value-content {
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+}
+main .value-content .chart{
+  max-width: 100px;
+}
+main .value-content .card .card-content .values {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  line-height: normal;
+}
+main .value-content .card .card-content .values h5 {
+  color: var(--white);
+  font-size: 16px;
+  line-height: 16px;
+}
+main .value-content .card .card-content .values h6 {
+  color: var(--gray-5);
+}
