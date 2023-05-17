@@ -14,6 +14,7 @@ import {
   Legend,
 } from "chart.js";
 import { useState } from "react";
+import Skeleton from "./Skeleton";
 
 ChartJS.register(
   CategoryScale,
@@ -57,9 +58,8 @@ const PriceChart = ({ name, id }: Props) => {
   const [format, setFormat] = useState("YYYY");
   const cryptoData = useAxios(
     "coins/" + id + "/market_chart?vs_currency=usd&days=" + interval
-  )[1];
-  console.log(cryptoData);
-  const coinPriceData = cryptoData?.prices.map((value: any) => ({
+  );
+  const coinPriceData = cryptoData[1]?.prices.map((value: any) => ({
     x: value[0],
     y: value[1].toFixed(2),
   }));
@@ -77,6 +77,17 @@ const PriceChart = ({ name, id }: Props) => {
       },
     ],
   };
+  if(cryptoData[0]){
+    return (
+      <div className="card">
+        <Skeleton className="h-5 w-32"/>
+        <Skeleton className="h-5 w-full mt-4"/>
+        <Skeleton className="h-5 w-full mt-4"/>
+        <Skeleton className="h-5 w-full mt-4"/>
+        <Skeleton className="h-5 w-full mt-4"/>
+      </div>
+    )
+  }
   function changeInterval(interval: string, format: string, id:string) {
     setInterval(interval);
     setFormat(format);
@@ -95,7 +106,7 @@ const PriceChart = ({ name, id }: Props) => {
           {cryptoData ? (
             <Line data={chartData} options={options} />
           ) : (
-            <div>Loading...</div>
+            <div></div>
           )}
         </div>
       </div>

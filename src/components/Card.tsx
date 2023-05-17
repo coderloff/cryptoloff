@@ -1,4 +1,5 @@
 import "./css/ValueContent.css";
+import Skeleton from "./Skeleton";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
 import {
@@ -45,12 +46,22 @@ interface Props {
   title: string;
   value: string;
   chartData?: any;
+  loading:boolean;
   percentage?: number;
   altText?: string;
 }
 
-const Card = ({ title, value, chartData, percentage, altText }: Props) => {
-  console.log(chartData);
+const Card = ({ title, value, chartData, loading, percentage, altText }: Props) => {
+  if(loading){
+    return (
+      <div className="card">
+        <Skeleton className="h-4 w-32"/>
+        <Skeleton className="h-4 w-full mt-2"/>
+        <Skeleton className="h-4 w-full mt-2"/>
+        <Skeleton className="h-4 w-full mt-2"/>
+      </div>
+    )
+  }
   const coinPriceData = chartData?.map((value: any) => ({
     x: value[0],
     y: value[1]?.toFixed(2),

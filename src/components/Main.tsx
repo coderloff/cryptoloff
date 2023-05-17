@@ -12,13 +12,13 @@ interface Props {
 const Main = ({ coinId }: Props) => {
   const coinsData = useAxios(
     "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
-  )[1];
-  const cryptoData = useAxios("coins/" + coinId)[1];
-  const marketData = useAxios("global")[1];
+  );
+  const cryptoData = useAxios("coins/" + coinId);
+  const marketData = useAxios("global");
   const marketCapChartData = useAxios(
     "coins/" + coinId + "/market_chart?vs_currency=usd&days=max"
-  )[1];
-  const market = marketData?.data;
+  );
+  const market = marketData[1]?.data;
   function convertNumberToString(n: number) {
     if (n / 1000000000 > 0) {
       return (n / 1000000000).toFixed(2).toString() + "B";
@@ -35,24 +35,33 @@ const Main = ({ coinId }: Props) => {
     <main>
       <div className="content-container">
         <div className="value-content content">
-          <Card title="Coins" chartData={marketCapChartData?.market_caps} value="9.43M" altText="24H Value (USD)"></Card>
+          <Card
+            title="Coins"
+            chartData={marketCapChartData[1]?.market_caps}
+            loading={marketCapChartData[0]}
+            value="9.43M"
+            altText="24H Value (USD)"
+          ></Card>
           <Card
             title="24H Price Change"
-            chartData={marketCapChartData?.market_caps}
+            chartData={marketCapChartData[1]?.market_caps}
+            loading={marketCapChartData[0]}
             value={market?.markets}
             percentage={market?.market_cap_change_percentage_24h_usd}
           ></Card>
           <Card
             title="Total Market Cap (USD)"
-            chartData={marketCapChartData?.market_caps}
+            chartData={marketCapChartData[1]?.market_caps}
+            loading={marketCapChartData[0]}
             value={convertNumberToString(
               Math.floor(market?.total_market_cap.usd)
             )}
-            percentage={11}
+            percentage={market?.market_cap_change_percentage_24h_usd}
           ></Card>
           <Card
             title="24H Value (USD)"
-            chartData={marketCapChartData?.market_caps}
+            chartData={marketCapChartData[1]?.market_caps}
+            loading={marketCapChartData[0]}
             value="28.57M"
             altText="Listed Cryptos"
           ></Card>
@@ -62,13 +71,11 @@ const Main = ({ coinId }: Props) => {
             name={coinId.charAt(0).toUpperCase() + coinId.slice(1)}
             id={coinId}
           />
-          {cryptoData && (
-            <CoinPriceChange
-              symbol={cryptoData?.symbol}
-              id={cryptoData?.id}
-              data={cryptoData.market_data}
-            />
-          )}
+          <CoinPriceChange
+            symbol={cryptoData[1]?.symbol}
+            id={cryptoData[1]?.id}
+            data={cryptoData}
+          />
         </div>
         <div className="market-content content">
           <Market data={coinsData} />

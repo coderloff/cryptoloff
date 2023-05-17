@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+@import url("https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css");
+@import url("https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Manrope", sans-serif;
+}
+:root {
+  --heading-1: 32px;
+  --heading-2: 28px;
+  --heading-3: 24px;
+  --heading-4: 20px;
+  --heading-5: 16px;
+  --heading-6: 12px;
+  --primary: linear-gradient(#89fe95, #6fff7d);
+  --secondary: #ffd84c;
+  --info: #8e98ff;
+  --succes: #0de7b2;
+  --warning: #ff3f57;
+  --alert: #b07bef;
+  --black-1: #181a20;
+  --black-2: #393e4d;
+  --black-3: #5e667a;
+  --black-4: #8993a4;
+  --white: #ffffff;
+  --gray-2: #d8e0ee;
+  --gray-3: #b1bfd4;
+  --gray-4: #95a1b2;
+  --gray-5: #8993ad;
+  --header-background: #1a1e23;
+  --header-input: #1b2025;
+  --sidebar-background: #191e24;
+  --main-background: #13161b;
+}
+h1 {
+  font-size: var(--heading-1);
+  line-height: var(--heading-1);
+}
+h2 {
+  font-size: var(--heading-2);
+  line-height: var(--heading-2);
+}
+h3 {
+  font-size: var(--heading-3);
+  line-height: var(--heading-3);
+}
+h4 {
+  font-size: var(--heading-4);
+  line-height: var(--heading-4);
+}
+h5 {
+  font-size: var(--heading-5);
+  line-height: var(--heading-5);
+}
+h6 {
+  font-size: var(--heading-6);
+  line-height: var(--heading-6);
+}

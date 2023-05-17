@@ -78,3 +78,6 @@ main .market-content .card-content .coin .market img{
 main .market-content .card-content .coin .value{
   color: var(--white);
 }
+main .market-content .chart {
+  max-width: 40px;
+}

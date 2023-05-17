@@ -2,8 +2,11 @@ main .value-content {
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
 }
-main .value-content .chart{
+main .value-content .chart {
   max-width: 100px;
+}
+main .value-content .card .wrapper-container{
+  max-height: 120px;
 }
 main .value-content .card .card-content .values {
   display: flex;
