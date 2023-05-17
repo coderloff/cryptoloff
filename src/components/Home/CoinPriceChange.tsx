@@ -1,5 +1,5 @@
-import Skeleton from "./Skeleton";
-import "./css/PriceContent.css";
+import Skeleton from "../Skeleton";
+import "../css/PriceContent.css";
 
 interface Props {
   symbol: string;

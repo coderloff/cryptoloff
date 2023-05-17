@@ -1,5 +1,5 @@
-import "./css/Main.css";
-import useAxios from "../hooks/useAxios";
+import "../css/Home.css";
+import useAxios from "../../hooks/useAxios";
 import Card from "./Card";
 import CoinPriceChange from "./CoinPriceChange";
 import PriceChart from "./PriceChart";
@@ -9,7 +9,7 @@ interface Props {
   coinId: string;
 }
 
-const Main = ({ coinId }: Props) => {
+const Home = ({ coinId }: Props) => {
   const coinsData = useAxios(
     "coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en"
   );
@@ -31,7 +31,7 @@ const Main = ({ coinId }: Props) => {
     }
   }
   return (
-    <main className="main">
+    <main className="home">
       <div className="content-container">
         <div className="value-content content">
           <Card
@@ -84,4 +84,4 @@ const Main = ({ coinId }: Props) => {
   );
 };
 
-export default Main;
+export default Home;

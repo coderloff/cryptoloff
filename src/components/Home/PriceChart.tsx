@@ -1,7 +1,7 @@
-import "./css/PriceContent.css";
+import "../css/PriceContent.css";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
-import useAxios from "../hooks/useAxios";
+import useAxios from "../../hooks/useAxios";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,7 +14,7 @@ import {
   Legend,
 } from "chart.js";
 import { useState } from "react";
-import Skeleton from "./Skeleton";
+import Skeleton from "../Skeleton";
 
 ChartJS.register(
   CategoryScale,

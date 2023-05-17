@@ -1,4 +1,4 @@
-import "./css/MarketContent.css";
+import "../css/MarketContent.css";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
 import {
@@ -12,8 +12,8 @@ import {
   Filler,
   Legend,
 } from "chart.js";
-import useAxios from "../hooks/useAxios";
-import Skeleton from "./Skeleton";
+import useAxios from "../../hooks/useAxios";
+import Skeleton from "../Skeleton";
 
 ChartJS.register(
   CategoryScale,

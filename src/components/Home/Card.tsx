@@ -1,5 +1,5 @@
-import "./css/ValueContent.css";
-import Skeleton from "./Skeleton";
+import "../css/ValueContent.css";
+import Skeleton from "../Skeleton";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
 import {

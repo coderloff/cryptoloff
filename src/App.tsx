@@ -1,15 +1,17 @@
 import Header from "./components/Header";
-import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
+import Home from "./components/Home/Home";
+// import BuyCrypto from "./components/Buy Crypto/BuyCrypto";
 import "./App.css";
 
 const App = () => {
   console.log(window.innerWidth);
+  // <BuyCrypto />
   return (
     <>
       <Sidebar />
       <Header />
-      <Main coinId="bitcoin" />
+      <Home coinId="bitcoin" />
       <div className="use-pc">
         <div className="content">
           <i className="fa-light fa-desktop icon"></i>
