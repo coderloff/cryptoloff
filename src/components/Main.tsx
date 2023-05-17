@@ -30,9 +30,8 @@ const Main = ({ coinId }: Props) => {
       return n.toString();
     }
   }
-  console.log(market);
   return (
-    <main>
+    <main className="main">
       <div className="content-container">
         <div className="value-content content">
           <Card

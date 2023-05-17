@@ -1,11 +1,15 @@
 main {
   position: absolute;
-  left: 230px;
+  left: 96px;
   top: 70px;
   right: 0;
   bottom: 0;
   padding: 20px;
   background: var(--black-1);
+  transition: all 0.4s ease;
+}
+.sidebar:hover ~ main{
+  left: 236px;
 }
 main .content-container {
   height: 100%;
@@ -49,11 +53,12 @@ main .card .content-wrapper {
   height: 100%;
   overflow-y: scroll;
 }
-main .card .content-wrapper::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
+  background: none;
 }
-main .card .content-wrapper::-webkit-scrollbar-thumb{
-  width: 6px;
+::-webkit-scrollbar-thumb {
   border-radius: 3px;
   padding-left: 5px;
   background: linear-gradient(#172628, #142124);

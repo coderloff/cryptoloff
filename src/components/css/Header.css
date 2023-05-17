@@ -1,5 +1,5 @@
 header {
-  left: 230px;
+  left: 96px;
   height: 70px;
   right: 0;
   top: 0;
@@ -9,7 +9,12 @@ header {
   align-items: center;
   justify-content: space-between;
   background: var(--header-background);
+  transition: all 0.4s ease;
 }
+.sidebar:hover + header{
+  left: 236px;
+}
+
 header .search-bar {
   width: 300px;
   height: 100%;

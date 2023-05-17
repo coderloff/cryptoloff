@@ -8,7 +8,7 @@ const App = () => {
     <>
     <Sidebar/>
     <Header />
-    <Main coinId="ethereum"/>
+    <Main coinId="bitcoin"/>
     </>
   )
 }

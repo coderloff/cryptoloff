@@ -1,6 +1,6 @@
 .sidebar {
   height: 100%;
-  width: 236px;
+  width: 96px; /* 236px */
   position: absolute;
   top: 0;
   left: 0;
@@ -9,16 +9,33 @@
   align-items: center;
   flex-direction: column;
   background: var(--sidebar-background);
+  transition: all 0.4s ease;
+}
+.sidebar:hover {
+  width: 236px;
+}
+.sidebar:hover > .logo{
+  padding: 0 40px;
+}
+.sidebar:hover > .logo h4{
+  display: block;
+}
+.sidebar:hover > .buttons .btn{
+  justify-content: start;
+}
+.sidebar:hover > .buttons .btn h6 {
+  display: block;
 }
 .sidebar .logo {
   height: 70px;
-  padding: 0px 40px;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--white);
 }
 .sidebar .logo h4 {
+  display: none;
   margin-bottom: 2px;
 }
 .sidebar .logo img {
@@ -37,6 +54,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 10px;
   color: var(--gray-5);
   cursor: pointer;
@@ -56,4 +74,5 @@
 .sidebar .buttons .btn h6 {
   margin-left: 10px;
   font-size: 14px;
+  display: none;
 }
